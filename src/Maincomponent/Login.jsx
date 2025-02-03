@@ -73,11 +73,11 @@ const Login = () => {
               <div className="form-wrap">
                 <label className="col-form-label">Email Address</label>
                 <div className="form-wrap-icon">
-                  <input type="text" className="form-control" 
+                  <input type="email" className="form-control" 
                      id="email"
                      onChange={handleChange}
                      value={formData.email}
-                     type="email"
+                     
                      required
                      />
                   <i className="ti ti-mail" />
