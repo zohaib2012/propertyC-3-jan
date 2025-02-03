@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import  { useState } from "react";
+import toastr from "toastr"
 import { Link ,useNavigate} from "react-router-dom";
 import { useLoginUserMutation } from "../Redux/CommonApi";
 
@@ -6,7 +7,7 @@ import { useLoginUserMutation } from "../Redux/CommonApi";
 const Login = () => {
 
   const [isPasswordVisible, setPasswordVisible] = useState(false);
-  const [errors, setErrors] = useState({});
+  // const [errors, setErrors] = useState({});
   const [formData, setFormData] = useState({email:"", password: "" });
     const [LoginUser, { isLoading }] = useLoginUserMutation ();
     const navigate = useNavigate();
@@ -18,7 +19,7 @@ const Login = () => {
               newErrors[key] = `${key} is required.`;
           }
       });
-      setErrors(newErrors);
+      // setErrors(newErrors);
       return Object.keys(newErrors).length === 0;
   };
   const handleSubmit = async (e) => {
@@ -77,7 +78,7 @@ const Login = () => {
                      id="email"
                      onChange={handleChange}
                      value={formData.email}
-                     
+                    //  type="email"
                      required
                      />
                   <i className="ti ti-mail" />
